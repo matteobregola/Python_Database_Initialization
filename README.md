@@ -22,16 +22,14 @@ Then the package has two objectives:
 ## Usage
 
 1. Initialize the class:
->db=dbinit()
+    db=dbinit()
     
 2. Select how we want to collect the data, the source file and where should the result be stored:
-== db.setbase(mode,source,destination) ==
-  *possible modes: "txt","csv","input","url"*
-
-1. Decide hoe should the table and the attributes: should be called:
-== db.setinfo(insertion) ==
-*possible modes: "regular"
-(an advanced option will be implemented to select the type of attributes)*
+     - **db.setbase(mode,source,destination)**
+     - *possible modes: "txt","csv","input","url"*
+3. Decide hoe should the table and the attributes: should be called:
+     - **db.setinfo(insertion)**
+     - *possible modes: "regular" (an advanced option will be implemented to select the type of attributes)*
 
 
 
@@ -40,3 +38,4 @@ Then the package has two objectives:
 1. set_info(advanded)
 2. Collect data from multiple files, websites
 3. Create multiple tables at the same time
+

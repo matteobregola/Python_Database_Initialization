@@ -6,7 +6,7 @@ Created on Fri Nov 25 08:27:32 2022
 """
 
 
-class psql:
+class db_init:
     
     mode=None
     source=None
@@ -105,7 +105,7 @@ class psql:
             attributes are considered as numeric types without quotations
             
             Insertion advanced: can be set to specify the need of quotations for
-            specif attrivutes
+            specif attributes and the type of separation for txt file and csv files.
         """
         
         tablename=input("Select TableName: ")
@@ -140,15 +140,58 @@ class psql:
             attrnum=len[attributes]
             
             data={}
+            #DATA contains rownumber, rowattr=[value1,value2...] 
 
-            if(insertion=="regular"):            
+            if(insertion=="regular"):   
+                
                 for i in range(n):
                     print(f"row{i}")
+                    rowattr=[]
+                    # create an array to store the attributes values
+                    
                     for j in range(attrnum):
                         n=input(f"{attributes[j]} : ")
+                        rowattr.append(n)
+                        # adding each value to the array
+                    
+                    #when the collection is done i insert the row in the data
+                    data[i]=rowattr
                 
                 print("--Insetion ended--")
+            else:
+                ##TODO
+                continue
+        
+        if(self.mode=="txt"):
+            print(f"You selected to collect data from {self.source}")
+            
+            data={}
+                #DATA contains rownumber, rowattr=[value1,value2...] 
+            with open(self.source, "r", encoding="utf-8") as txt_file:
+                row=0
+                
+                
+                for row in txt_file:
+                    data[row]=row.split(",")
+                    
+                    if(insertion=="regular"):   
                         
+                        for i in range(n):
+                            print(f"row{i}")
+                            rowattr=[]
+                            # create an array to store the attributes values
+                            
+                            for j in range(attrnum):
+                                n=input(f"{attributes[j]} : ")
+                                rowattr.append(n)
+                                # adding each value to the array
+                            
+                            #when the collection is done i insert the row in the data
+                            data[i]=rowattr
+                        
+                        print("--Insetion ended--")
+                    else:
+                        ##TODO
                     
                 
     

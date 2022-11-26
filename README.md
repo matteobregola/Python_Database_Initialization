@@ -22,7 +22,7 @@ Then the package has two objectives:
 ## Usage
 
 1. Initialize the class:
-    db=dbinit()
+     - **db=dbinit()**
     
 2. Select how we want to collect the data, the source file and where should the result be stored:
      - **db.setbase(mode,source,destination)**

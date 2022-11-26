@@ -1,1 +1,1 @@
-# Python_Database_Initialization
+# Python Database Initialization Package

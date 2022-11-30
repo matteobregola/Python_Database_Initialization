@@ -105,7 +105,7 @@ class db_init:
             attributes are considered as numeric types without quotations
             
             Insertion advanced: can be set to specify the need of quotations for
-            specif attributes and the type of separation for txt file and csv files.
+            specific attributes and the type of separation for txt file and csv files.
         """
         
         tablename=input("Select TableName: ")
@@ -131,6 +131,8 @@ class db_init:
         """
             Once collected the info about the tables 
             it's necessary to collect the data based on the mode
+            the insertion can ba regular or advaced. 
+            advanced need to be implemented
         """
         
         if(self.mode=="input"):
@@ -158,10 +160,12 @@ class db_init:
                     data[i]=rowattr
                 
                 print("--Insetion ended--")
+            
+            """
             else:
                 ##TODO
-                continue
-        
+                continue 
+            """
         if(self.mode=="txt"):
             print(f"You selected to collect data from {self.source}")
             
@@ -174,25 +178,11 @@ class db_init:
                 for row in txt_file:
                     data[row]=row.split(",")
                     
-                    if(insertion=="regular"):   
-                        
-                        for i in range(n):
-                            print(f"row{i}")
-                            rowattr=[]
-                            # create an array to store the attributes values
-                            
-                            for j in range(attrnum):
-                                n=input(f"{attributes[j]} : ")
-                                rowattr.append(n)
-                                # adding each value to the array
-                            
-                            #when the collection is done i insert the row in the data
-                            data[i]=rowattr
-                        
-                        print("--Insetion ended--")
-                    else:
-                        ##TODO
-                    
+                print("--Insetion ended--")
+        """   
+        else:
+            ##TODO
+        """
                 
     
     

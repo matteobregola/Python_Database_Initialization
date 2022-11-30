@@ -22,14 +22,16 @@ Then the package has two objectives:
 ## Usage
 
 1. Initialize the class:
-     - **db=dbinit()**
+     - **db=db_init()**
     
 2. Select how we want to collect the data, the source file and where should the result be stored:
      - **db.setbase(mode,source,destination)**
      - *possible modes: "txt","csv","input","url"*
+     - *possible sources: a string containg the path of a txt/csv file, input if mode="input" or the url as a string if mode="url"*
+     - *possible destination: the name of a txt file   *
 3. Decide hoe should the table and the attributes: should be called:
      - **db.setinfo(insertion)**
-     - *possible modes: "regular" (an advanced option will be implemented to select the type of attributes)*
+     - *possible modes: "regular" (an advanced option will be implemented to select the type of attributes or to specify file separations)*
 
 
 

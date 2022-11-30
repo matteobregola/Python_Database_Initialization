@@ -16,9 +16,9 @@ class db_init:
         print("Class intialized...")
     
     def setbase(self,mode,source,destination):
-        self.setmode(mode)
-        self.setsource(source)
-        self.setdestination(destination)
+        self.__setmode(mode)
+        self.__setsource(source)
+        self.__setdestination(destination)
         
         
     def __setmode(self,mode):
@@ -31,8 +31,8 @@ class db_init:
         """
         mode=mode.lower()
         if mode=="txt":
-                self.mode="txt"
-                
+            self.mode="txt"
+              
         else :
             if mode=="csv":  
                 self.mode="csv"
@@ -64,7 +64,7 @@ class db_init:
                     self.source=source
             else:
                 raise Exception("Extension not supported")
-                
+        else:        
             if mode=="csv":  
                 if(source[-4:len(source)])==".csv":
                     self.source=source
@@ -121,7 +121,7 @@ class db_init:
                 attributes.append(input(f"Insert Name of Attribute {i}: "))
             
             
-            self.collectdata("regular",attributes,types)
+            self.__collectdata("regular",attributes,types)
         
         
         
